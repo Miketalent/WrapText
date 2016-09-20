@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace WrapText
 {
-    public class Class1
+    public static class WrapTextUtil
     {
+        public static string wrapText(string input, int column)
+        {
+            return "a";
+        }
     }
 }
