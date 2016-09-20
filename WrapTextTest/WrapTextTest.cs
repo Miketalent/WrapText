@@ -62,6 +62,15 @@ namespace WrapTextTest
 
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ThrowIfInputColumnIsNegative()
+        {
+            var input = "abc";
+            WrapTextUtil.wrapText(input, -1);
+
+        }
+
 
     }
 }
