@@ -19,7 +19,18 @@ namespace WrapText
                 return input;
 
             int columnReached = 0;
-            int startIndex = 0;
+            StringBuilder output = new StringBuilder();
+
+            foreach(var c in input)
+            {
+                output.Append(c);
+                if(++columnReached == column)
+                {
+                    output.Append('\n');
+                    columnReached = 0;
+                }
+            }
+           /* int startIndex = 0;
             string output = "";
             for(int i=0; i<input.Length; i++)
             {
@@ -40,9 +51,9 @@ namespace WrapText
                 }
 
 
-            }
+            }*/
 
-            return output;
+            return output.ToString();
         }
     }
 }
