@@ -19,39 +19,19 @@ namespace WrapText
                 return input;
 
             int columnReached = 0;
+            int totalCharAppended = 0;
             StringBuilder output = new StringBuilder();
 
             foreach(var c in input)
             {
                 output.Append(c);
-                if(++columnReached == column)
+                totalCharAppended++;
+                if(++columnReached == column && totalCharAppended < input.Length)
                 {
                     output.Append('\n');
                     columnReached = 0;
                 }
             }
-           /* int startIndex = 0;
-            string output = "";
-            for(int i=0; i<input.Length; i++)
-            {
-                if(++columnReached == column)
-                {
-                    output += input.Substring(startIndex, column) + "\n";
-                    //reset columnReached to 0 to start counting again
-                    columnReached = 0;
-
-                    startIndex = i + 1;
-
-                    //check if the remaining substring needs a line break
-                    if(input.Substring(startIndex).Length <= column)
-                    {
-                        output += input.Substring(startIndex);
-                        break;
-                    }
-                }
-
-
-            }*/
 
             return output.ToString();
         }
