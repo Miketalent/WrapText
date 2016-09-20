@@ -13,7 +13,7 @@ namespace WrapText
             if (column >= input.Length)
                 return input;
 
-            return "a";
+            return input.Insert(column, "\n");
         }
     }
 }
