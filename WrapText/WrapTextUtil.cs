@@ -10,6 +10,9 @@ namespace WrapText
     {
         public static string wrapText(string input, int column)
         {
+            if (column > input.Length)
+                return input;
+
             return "a";
         }
     }
