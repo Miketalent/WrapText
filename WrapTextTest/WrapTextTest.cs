@@ -51,6 +51,17 @@ namespace WrapTextTest
 
         }
 
+        [TestMethod]
+        public void ShallInsertLineBreakAtIndex1AndIndex2IfInputStrLengthIs3AndColumnIs1()
+        {
+            var input = "abc";
+            var expected = "a\nb\nc";
+            var actual = WrapTextUtil.wrapText(input, 1);
+
+            Assert.AreEqual(expected, actual);
+
+        }
+
 
     }
 }
