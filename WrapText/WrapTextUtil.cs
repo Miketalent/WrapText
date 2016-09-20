@@ -10,6 +10,11 @@ namespace WrapText
     {
         public static string wrapText(string input, int column)
         {
+            if(column < 0)
+            {
+                throw new InvalidOperationException();
+            }
+
             if (column >= input.Length)
                 return input;
 
