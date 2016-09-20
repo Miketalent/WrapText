@@ -13,7 +13,19 @@ namespace WrapText
             if (column >= input.Length)
                 return input;
 
-            return input.Insert(column, "\n");
+            int columnReached = 0;
+            int wrapCount = 1;
+            for(int i=0; i<input.Length; i++)
+            {
+                if(++columnReached == column)
+                {
+                    input.Insert(wrapCount++ * columnReached, "\n");
+                    //reset columnReached to 0 to start counting again
+                    columnReached = 0;
+                }
+            }
+
+            return input;
         }
     }
 }
